@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0b7956c246.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+          height: 100vh;
+          overflow: hidden;
+          font-family: sans-serif;
+          background-color: black;
+        }
+        .main-content {
+          border-left: 1px solid #7a7b7d51;
+          height: 100vh;
+          -ms-overflow-style: none;  
+          scrollbar-width: none;  
+          overflow: auto;
+        }
+        /* .center-tweet{
+            height: 100vh;
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+            overflow: auto;
+        } */
+        .trends {
+          border-left: 1px solid #7a7b7d51;
+        }
+        .item{
+            border-radius: 40px;
+            margin: 5px 10px;
+            padding: 8px 15px;
+        }
+        .item:hover{
+            background-color: rgba(255, 255, 255, 0.081);
+            align-items: center;
+            width: fit-content;
+            padding: 8px 15px;
+        }
+        .item1{
+            border-radius: 40px;
+            margin: 5px 10px;
+            padding: 8px 15px;
+            font-weight: 800; 
+        }
+        .item1:hover{
+            background-color: rgba(255, 255, 255, 0.081);
+            align-items: center;
+            width: fit-content;
+            padding: 8px 15px;
+        }
+        .item1 i{
+            margin-right: 20px;
+            font-weight: 800;
+        }
+        .item i{
+            margin-right:20px;
+        }
+        .item svg{
+            margin-right: 20px;
+            color: white;
+        }
+        .left-div{
+            width: 100%;
+            max-width: 260px;
+            margin-left: auto;
+            color: white;
+            align-items: center;
+            /* padding-left: 30px; */
+        }
+        img{
+            color: #fff;
+            width: 16px;
+            margin-right: 20px;
+        }
+        .img2{
+            width: 35px;
+            /* margin-left: 15px; */
+        }
+        .img3{
+            width: 20px;
+        }
+        .img4{
+            width: 18px;
+        }
+        .item1{
+            font-weight: 800;
+        }
+        button{
+            width: 200px;
+            padding: 12px;
+            margin: 5px 10px;
+            background-color: rgb(24,130,200);
+            margin-right: 20px;
+            border-radius: 30px;
+            color: white;
+            border: none;
+        }
+        button:hover{
+            background-color: rgb(19, 107, 166);
+        }
+        .item2{
+            border-radius: 40px;
+            margin-top: 30px;
+            padding: 8px 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .item2:hover{
+            background-color: rgba(255, 255, 255, 0.081);
+            align-items: center;
+            width: fit-content;
+        }
+        .img6{
+            border-radius: 100px;
+            width: 20px;
+        }
+        .item2 i{
+            margin-left: 20px;
+        }
+        .text{
+            display: flex;
+            flex-direction: column;
+        }
+        .span{
+            color: #393e43;
+            font-size: 14px;
+        }
+        .input-container{
+            display: flex;
+            border: none;
+            background-color: #393e43;
+            width: 100%;
+            align-items: center;
+            padding: 10px 5px;
+            border-radius: 30px;
+            outline-color: rgb(19, 107, 166);
+        }
+        .input-container:hover i{
+           color: rgb(19, 107, 166);
+        }
+        input{
+            outline: none;
+            background-color: transparent;
+            border: none;
+            margin-left: 8px;
+        }
+        input::placeholder{
+            color: #7a7b7d;
+        }
+        .input-container i{
+            padding: 0 15px;
+            color: #7a7b7d;
+        }
+         .box{
+            border: 1px solid #7a7b7d51;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            align-items: center;
+         }
+         .btn-box{
+            width: 100px;
+            padding: 5px;
+            margin: 5px 10px 5px 0;
+            background-color: rgb(24,130,200);
+            border-radius: 30px;
+            color: white;
+            border: none;
+        }
+        .box p{
+            font-size: 14px;
+        }
+        .box2{
+            border: 1px solid #7a7b7d51;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+         }
+        .boxing{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .boxing:hover{
+            background-color: rgba(23, 22, 22, 0.136);
+            align-items: center;
+        }
+        h4{
+            padding-top: 5px;
+            font-weight: 700;
+        }
+        .box2 h4{
+            margin-bottom: 30px;
+        }
+        .boxer{
+            color: #7a7b7d;
+            font-size: 12px;
+            margin: 0;
+        }
+        h6{
+            margin-bottom: 3px;
+        }
+        a{
+            text-decoration-color: rgb(62, 162, 228);
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        .col-lg-7 nav .topnav{
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            border-bottom: 1px solid #7a7b7d51;
+        }
+        .for-you:hover{
+            background-color: #6d768032;
+        }
+        .for-you{
+            border-bottom: 3px solid rgb(29,155,240);
+        }
+        .follow:hover{
+            background-color: #6d768032;
+        }
+        .follow{
+            color: #7a7b7d;
+        }
+        .box3{
+            border: 1px solid #7a7b7d51;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+         }
+         .item3{
+            border-radius: 40px;
+            margin-top: 30px;
+            padding: 8px 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            text-align: center;
+        }
+        .item3:hover{
+            background-color: rgba(23, 22, 22, 0.136);
+            align-items: center
+        }
+        .text-2{
+            display: flex;
+            flex-direction: column;
+        }
+        .span2{
+            font-size: 14px;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .span{
+            color: #393e43;
+        }
+        .sub-item3{
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .img7{
+            border-radius: 100px;
+            width: 30px;
+            height: 30px;
+        }
+        .btn10{
+            width: 100px;
+        }
+        .link-a{
+            text-decoration-color: rgb(62, 162, 228);
+            text-decoration: none;
+        }
+        .link-a:hover{
+            text-decoration: underline;
+        }
+        .foot{
+            font-size: 12px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .foot li:hover{
+            text-decoration: underline;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            color: rgb(72, 75, 78);
+            text-decoration: none;
+            list-style-type: none;
+            padding: 0;
+            width: 80%;
+            justify-content: center;
+        }
+        ul li a{
+            color: rgb(72, 75, 78);
+        }
+        .topnav i{
+            color: white;
+            font-size: 20px;
+            align-items: center;
+        }
+        .topnav{
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            background-color: black;
+            border: 1px solid #7a7b7d51;
+        }
+        nav div{
+            text-align:center;
+            padding:10px 0;
+            background-color: transparent;
+        }
+        .image1{
+            width: 9%;
+        }
+        .image2{
+            width: 30px;
+            border-radius: 100%;
+        }
+        .image4{
+            width: 10%;
+        }
+        .image3{
+            width: 7%;
+        }
+        .mid-notification{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;  
+        }
+        .circle-div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-right: 20px;
+        }
+        .mid-notification i:hover{
+            color: rgb(150, 155, 160);
+        }
+        .comment{
+            margin-left: 70px;
+            padding-top: 10px;
+            line-height: 35px;
+        }
+        .comment-3{
+            margin-left: 70px;
+            padding-top: 10px;
+            line-height: 35px;
+            color: #7a7b7d;
+        }
+        .notification{
+            border-bottom: 1px solid #7a7b7d51;
+        }
+        .notification2{
+            border-bottom: 1px solid #7a7b7d51;
+        }
+        .comment-2{
+            margin-left: 20px;
+            line-height: 25px;
+            margin-left: 0;
+            padding: 0;
+        }
+        .button-class {
+            width: 50px;
+            height: 50px;
+            margin-left: 30px;
+        }
+        .wrap-div i:hover{
+            color: #1DA1F2;
+        }
+        .boxing i:hover{
+            color: #1DA1F2;
+        }
+        .bottom-icon {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            background-color: black;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dropdown-list {
+            width: 290px !important;
+            right: -20px !important;
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px !important;
+            color: white;
+        }
+
+        .dropdown-list li {
+            padding-bottom: 5px;
+            font-size: 14px;
+        }
+        .right-overflow{
+            position: sticky;
+            top: -800px;
+        }
+        .col-lg-5 nav {
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            z-index: 9999999999;
+        }
+        .btn11 {
+            width: 100px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="row h-100">
+        <div class="d-none d-sm-block col-sm-2 col-md-3 px-0 px-lg-2">
+          <div class="h-100 pt-3 left-div ms-auto ps-md-4">
+                <div class="item text-center text-md-start"><img src="blacktwitterlogo-removebg-preview.png" class="img2" alt=""></div>
+                <a href="./index.html"><div class="item fw-bold text-center text-md-start"><i class="fa-solid fa-house"></i><span
+                    class="d-none d-md-inline">Home</span></div></a>
+            <a href="./twitterexplore.html"><div class="item text-center text-md-start"><i class="fa-solid fa-magnifying-glass"></i><span
+                    class="d-none d-md-inline">Explore</span></div></a>
+            <a href="./twitternotification.html"><div class="item text-center text-md-start"><i class="fa-regular fa-bell"></i><span
+                    class="d-none d-md-inline">Notification</span></div></a>
+            <div class="item text-center text-md-start"><i class="fa-solid fa-envelope"></i><span
+                    class="d-none d-md-inline">Messages</span></div>
+            <div class="item text-center text-md-start"><img src="FilterImage (1).png" class="img4" alt=""><span
+                    class="d-none d-md-inline">Grok</span></div>
+            <div class="item text-center text-md-start"><i class="fa-regular fa-bookmark"></i><span
+                    class="d-none d-md-inline">Bookmark</span></div>
+            <div class="item text-center text-md-start"><i class="fa-solid fa-briefcase"></i><span
+                    class="d-none d-md-inline">Jobs</span></div>
+            <a href="./twittercommunity.html"><div class="item text-center text-md-start"><i class="fa-solid fa-user-group"></i><span
+                    class="d-none d-md-inline">Communities</span></div></a>
+            <div class="item text-center text-md-start"><img src="FilterImage (2).png" alt=""><span
+                    class="d-none d-md-inline">Premium</span></div>
+            <div class="item text-center text-md-start"><i class="fa-solid fa-bolt"></i><span
+                    class="d-none d-md-inline">Verified Orgs</span></div>
+            <a href="./twitterprofile.html"><div class="item text-center text-md-start"><i class="fa-regular fa-user"></i><span
+                    class="d-none d-md-inline">Profile</span></div></a>
+            <div class="item text-center text-md-start"><img src="FilterImage (3).png" class="img3" alt=""><span
+                    class="d-none d-md-inline">More</span></div>
+                <button class="d-none d-md-none d-lg-block" type="button">Post</button>
+                <button class="button-class rounded-circle d-block d-md-block d-lg-none" type="button"><img
+                        src="svgviewer-png-output.png" alt=""></button>
+                <div class="item2 d-none d-md-flex px-3">
+                    <img src="google2.jpeg" class="img6 me-3" alt="">
+                    <div class="text">
+                        <span>Temi_olu_wa</span>
+                        <span class="span">@TemiloluwaAwos1</span>
+                    </div>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col-sm-10 col-md-9 main-content">
+          <div class="row">
+            <div class="bottom-icon d-flex d-md-none text-light">
+                <a href="./index.html"><i class="fa-solid fa-house"></i></a>
+                <a href="./twitterexplore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href=""><img src="FilterImage (1).png" class="img4" alt=""></a>
+                <a href="./twitternotification.html"><i class="fa-regular fa-bell"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href="./twittercommunity.html"><i class="fa-solid fa-user-group"></i></a>
+            </div>
+            <div class="col-lg-7 p-0 center-tweet">
+                <div class="topnav w-100 pt-2">
+                    <div class="d-flex align-items-center justify-content-between px-4 ">   
+                        <h4 class="text-light fw-bold">Notification</h4>
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <nav class="d-flex pt-2 justify-content-between align-items-center">                    
+                        <div class="for-you fw-semibold text-light h-100 w-100 p-2">All</div>
+                        <div class="follow fw-semibold h-100 w-100 p-2">Verified</div>
+                        <div class="follow fw-semibold h-100 w-100 p-2">Mentioned</div>
+                    </nav>
+                </div>
+                <div class="notification">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        If she tells you to put off the lights before she strips, her body no good for eyes. <br>
+
+                        Make sure the lights are on, so that you'll see everything. <br>
+
+                        And she should wash off all her make up. <br>
+
+                        Before you go knack "ayamantaga". <br>
+
+                        And make sure that you "sniff" with style. <br>
+
+                        End.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="KrIwTgdn_normal.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Vanguard Newspapers is LIVE: "EXECUTIVE ORDER ON MEDICAMENTS: <br> FG yet to implement 2 months after"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">             
+                        If you make love to your woman without kissing her, either your mouth or <br> her mouth dey smell. <br>
+
+                        End.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image4 ps-3" src="blacktwitterlogo-removebg-preview.png" alt="">
+                        <div class="circle-div">      
+                            <p class="comment-2 text-light">             
+                                There was a login to your account @TemiloluwaAwos1 from a new device <br> on Aug 21, 2024. Review it now.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image4 ps-3" src="blacktwitterlogo-removebg-preview.png" alt="">
+                        <div class="circle-div">      
+                            <p class="comment-2 text-light">             
+                                There was a login to your account @TemiloluwaAwos1 from a new device <br> on Aug 21, 2024. Review it now.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image4 ps-3" src="blacktwitterlogo-removebg-preview.png" alt="">
+                        <div class="circle-div">      
+                            <p class="comment-2 text-light">             
+                                There was a login to your account @TemiloluwaAwos1 from a new device <br> on Aug 21, 2024. Review it now.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div><div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div><div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div><div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image3 ps-3" src="Screenshot_2024-08-26_7.03.13_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment text-light">
+                        Tobiloba🥑 is LIVE: "TANSTACK TABLE V9: LET'S WORK ON IT <br> TOGETHER WITH EMMANUEL!"
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+                <div class="notification2">
+                    <div class="mid-notification">
+                        <img class="image1 ps-3" src="Screenshot_2024-08-26_7.02.55_PM-removebg-preview.png" alt="">
+                        <div class="circle-div">
+                            <div class="sub-cirlce-div">
+                                <img class="image2" src="lQyqvNbm_bigger.jpg" alt="">
+                                <h6 class="span7 fw-bold text-light pt-2 ">Agba John Doe</h6>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <p class="comment-3">
+                        Until women take control of their feelings, & stop looking for men that <br> they'll love, & start looking for men that show what true masculinity is. <br>
+
+                        They'll continue to get married to men that will show them shege later. <br>
+
+                        "I want to marry him because I love him so much". <br>
+
+
+                        Isorite.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-5 trends px-3 d-none d-lg-block">
+    
+                <nav class="border-0 bg-black p-2">
+                    <div class="input-container w-75">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="username" placeholder="Search">
+                    </div>
+                </nav>
+
+            <div class="right-overflow">
+                <div class="box2 w-75">
+                    <h4>Trends for you</h4>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxing">
+                        <div class="boxes">
+                            <p class="boxer">Trending in Nigeria</p>
+                            <h6 class="fw-bold">South Africa</h6>
+                            <p class="boxer">91.7k posts</p>
+                        </div>
+                        <div class="dropstart">
+                            <i class="fa-solid fa-ellipsis" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu dropdown-list bg-black shadow-lg px-3">
+                                <li>😃 Not interested in this</li>
+                                <li>This trend is harmful or spammy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="">Show more</a>
+                </div>
+                <div class="box3 w-75">
+                    <h4>Who to follow</h4>
+                    <div class="item3 justify-content-between mb-1">
+                        <div class="sub-item3">
+                            <img src="google2.jpeg" class="img7" alt="">
+                            <div class="text-2">
+                                <span class=" span2 fw-semibold text-light">Agba John Doe</span>
+                                <span class="span text-start">@Joe-doe</span>
+                            </div>
+                        </div>
+                        <button class=" btn11 p-1 fw-semibold bg-light text-dark"
+                            type="button">Follow</button>
+                    </div>
+                    <div class="item3 justify-content-between mb-1">
+                        <div class="sub-item3">
+                            <img src="google2.jpeg" class="img7" alt="">
+                            <div class="text-2">
+                                <span class="span2 fw-semibold text-light">Agba John Doe</span>
+                                <span class="span text-start">@Joe-doe</span>
+                            </div>
+                        </div>
+                        <button class=" btn11 p-1 fw-semibold bg-light text-dark"
+                            type="button">Follow</button>
+                    </div>
+                    <div class="item3 justify-content-between mb-3">
+                        <div class="sub-item3">
+                            <img src="google2.jpeg" class="img7" alt="">
+                            <div class="text-2">
+                                <span class=" span2 fw-semibold text-light">Agba John Doe</span>
+                                <span class="span text-start">@Joe-doe</span>
+                            </div>
+                        </div>
+                        <button class=" btn11 p-1 fw-semibold bg-light text-dark"
+                            type="button">Follow</button>
+                    </div>
+                    <a class="link-a" href="">Show more</a>
+                </div>
+                <div class="foot d-none d-lg-block">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Download the X app</a></li>
+                        <li><a href="">Help Center</a></li>
+                        <li><a href="">Terms of Service</a></li>
+                        <li><a href="">Privacy Police</a></li>
+                        <li><a href="">Cookie Policy</a></li><br>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Ads info</a></li>
+                        <li><a href="">More...</a></li>
+                        <li><a href="">@2024XCorp.</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+                integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+                crossorigin="anonymous"></script>
+</body>
+</html>

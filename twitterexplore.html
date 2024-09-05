@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0b7956c246.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+            background-color: black;
+        }
+
+        .main-content {
+            height: 100%;
+            overflow-y: scroll;
+            border-left: 1px solid #7a7b7d51;
+        }
+
+        .trends {
+            border-left: 1px solid #7a7b7d51;
+        }
+
+        .item {
+            border-radius: 40px;
+            margin: 5px 0px 5px 10px;
+            padding: 8px 15px;
+        }
+
+        .item span {
+            margin-left: 20px;
+        }
+
+        .item:hover {
+            background-color: rgba(255, 255, 255, 0.081);
+            align-items: center;
+            width: fit-content;
+        }
+        .left-div {
+            width: 100%;
+            color: white;
+            align-items: center;
+            max-width: 260px;
+            margin-left: auto;
+        }
+
+        img {
+            color: #fff;
+            width: 16px;
+            /* margin-right: 20px; */
+        }
+
+        .img2 {
+            width: 35px;
+            /* margin-left: 40px; */
+        }
+
+        .img3 {
+            width: 20px;
+        }
+
+        .img4 {
+            width: 18px;
+        }
+
+        button {
+            width: 200px;
+            padding: 12px;
+            margin: 5px 10px;
+            background-color: rgb(24, 130, 200);
+            margin-right: 20px;
+            border-radius: 30px;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: rgb(19, 107, 166);
+        }
+
+        .button-class {
+            width: 50px;
+            height: 50px;
+            /* margin: 5px 10px; */
+            margin-left: 30px;
+        }
+
+        .item2 {
+            border-radius: 40px;
+            margin-top: 30px;
+            padding: 8px 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        .item2:hover {
+            background-color: rgba(255, 255, 255, 0.081);
+            align-items: center;
+            width: fit-content;
+        }
+
+        .img6 {
+            border-radius: 100px;
+            width: 20px;
+        }
+
+        .item2 i {
+            margin-left: 20px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .span {
+            color: #393e43;
+            font-size: 14px;
+        }
+
+        .input-container {
+            display: flex;
+            border: none;
+            background-color: rgb(32, 35, 39);
+            width: 100%;
+            align-items: center;
+            padding: 10px 5px;
+            border-radius: 30px;
+            outline-color: rgb(19, 107, 166);
+        }
+
+        input {
+            outline: none;
+            background-color: transparent;
+            border: none;
+            margin-left: 8px;
+        }
+
+        input::placeholder {
+            color: #7a7b7d;
+        }
+
+        .input-container i {
+            padding: 0 15px;
+            color: #7a7b7d;
+        }
+
+        .box {
+            border: 1px solid #7a7b7d51;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .btn-box {
+            width: 100px;
+            padding: 5px;
+            margin: 5px 10px 5px 0;
+            background-color: rgb(24, 130, 200);
+            border-radius: 30px;
+            color: white;
+            border: none;
+        }
+
+        .box p {
+            font-size: 14px;
+        }
+
+        .box2 {
+            border: 1px solid #7a7b7d51;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .boxing {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .boxing:hover {
+            background-color: rgba(23, 22, 22, 0.136);
+            align-items: center;
+        }
+
+        h4 {
+            padding-top: 5px;
+            font-weight: 700;
+        }
+
+        .box2 h4 {
+            margin-bottom: 30px;
+        }
+
+        .boxer {
+            color: #7a7b7d;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        h6 {
+            margin-bottom: 3px;
+        }
+
+        a {
+            text-decoration-color: rgb(62, 162, 228);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .col-7 nav {
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+            /* position: sticky;
+            position: -webkit-sticky; */
+            top: 0;
+            border-bottom: 1px solid #7a7b7d51;
+        }
+        .topnav{
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            background-color: black;
+            border: 1px solid #7a7b7d51;
+            z-index: 9999999999999;
+        }
+        nav div{
+            text-align:center;
+            padding:10px 0;
+            background-color: transparent;
+        }
+        .for-you:hover {
+            background-color: #6d768032;
+        }
+
+        .for-you {
+            border-bottom: 3px solid rgb(29, 155, 240);
+        }
+
+        .follow:hover {
+            background-color: #6d768032;
+        }
+
+        .follow {
+            color: rgb(110, 115, 120);
+        }
+
+        .col-5 nav {
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            z-index: 9999999999;
+        }
+
+        .box3 {
+            border: 1px solid #7a7b7d51;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .item3 {
+            border-radius: 40px;
+            margin-top: 30px;
+            padding: 8px 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            text-align: center;
+        }
+
+        .item3:hover {
+            background-color: rgba(23, 22, 22, 0.136);
+            align-items: center
+        }
+
+        .text-2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .span2 {
+            font-size: 14px;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .span {
+            color: #393e43;
+        }
+
+        .sub-item3 {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .img7 {
+            border-radius: 100px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .btn11 {
+            width: 100px;
+        }
+
+        .link-a {
+            text-decoration-color: rgb(62, 162, 228);
+            text-decoration: none;
+        }
+
+        .link-a:hover {
+            text-decoration: underline;
+        }
+
+        .foot {
+            font-size: 12px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .ul li:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            color: rgb(72, 75, 78);
+            text-decoration: none;
+            list-style-type: none;
+            padding: 0;
+            width: 80%;
+            justify-content: center;
+        }
+
+        ul li a {
+            color: rgb(72, 75, 78);
+        }
+
+        .first-col h4 {
+            color: rgb(107, 112, 117);
+        }
+
+        .image20 {
+            width: 40px;
+            border-radius: 100%;
+        }
+
+        .btn-box2 {
+            width: 100px;
+            padding: 5px;
+            margin: 5px 10px 5px 0;
+            background-color: rgb(27, 145, 224);
+            border-radius: 30px;
+            color: white;
+            border: none;
+        }
+
+        .icons-div {
+            color: rgb(27, 145, 224);
+            margin-left: 50px;
+        }
+
+        .icons-div i {
+            padding-left: 10px;
+            font-size: 16px;
+            /* margin: 30px; */
+        }
+
+        .whole-div {
+            border-bottom: 1px solid #7a7b7d51;
+        }
+
+        .word-div {
+            text-align: center;
+            align-items: center;
+            border-top: 1px solid #7a7b7d51;
+            border-bottom: 1px solid #7a7b7d51;
+            padding-top: 20px;
+            color: rgb(27, 145, 224);
+        }
+
+        .wrap-div {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+        }
+        .wrap-div i {
+            color: #fff;
+        }
+        .wrap-div .span2 {
+            color: rgb(65, 69, 71);
+        }
+        .image10 {
+            width: 40px;
+            border-radius: 100%;
+        }
+        .upper {
+            display: flex;
+        }
+        .image-div img, .image-div video{
+            width: 100%;
+            border: 1px solid #7a7b7d51;
+            border-radius: 10px;
+            margin: auto;
+        }
+        .footer-div {
+            color: rgb(91, 95, 99);
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .word-icon5 {
+            display: flex;
+            gap: 15px;
+        }
+        .fa-bookmark:hover {
+            color: #1DA1F2;
+        }
+        .fa-download:hover {
+            color: #1DA1F2;
+        }
+        .word-icon {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+        .word-icon:hover {
+            color: #1DA1F2;
+        }
+        .word-icon2 {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+        .word-icon2:hover {
+            color: #17BF41;
+        }
+        .word-icon3 {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+        .word-icon3:hover {
+            color: #E81C4F;
+        }
+        .word-icon4 {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+
+        .word-icon4:hover {
+            color: #1DA1F2;
+        }
+        .picture img{
+            width: 100%;
+        }
+        .div-tweets {
+            border-bottom: 1px solid #7a7b7d51;
+        }
+        .bottom-icon{
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            background-color:black;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .wrap-div i:hover{
+            color: #1DA1F2;
+        }
+        .boxing i:hover{
+            color: #1DA1F2;
+        }
+        .hover-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            border-radius: 10px;
+            padding: 10px;
+            width: 300px;
+            z-index: 1;
+        }
+
+        .dropdown-content {
+            text-align: left;
+        }
+
+        .sub-dropdown1 img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        p {
+            color: #7a7b7d;
+        }
+
+        .description {
+            margin: 5px 0;
+            color: #fff;
+        }
+
+        .stats {
+            margin-top: 10px;
+        }
+
+        .stats p {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .follow-btn {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid white;
+            padding: 5px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .hover-container:hover .dropdown {
+            display: block;
+        }
+        .right-overflow{
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="row h-100">
+        <div class="d-none d-sm-block col-sm-2 col-md-3 px-0 px-lg-2">
+          <div class="h-100 pt-3 left-div ms-auto ps-md-4">
+                <div class="item text-center text-md-start"><img src="blacktwitterlogo-removebg-preview.png" class="img2" alt=""></div>
+                <a href="./index.html"><div class="item fw-bold text-center text-md-start"><i class="fa-solid fa-house"></i><span
+                    class="d-none d-md-inline">Home</span></div></a>
+            <a href="./twitterexplore.html"><div class="item text-center text-md-start"><i class="fa-solid fa-magnifying-glass"></i><span
+                    class="d-none d-md-inline">Explore</span></div></a>
+            <a href="./twitternotification.html"><div class="item text-center text-md-start"><i class="fa-regular fa-bell"></i><span
+                    class="d-none d-md-inline">Notification</span></div></a>
+            <div class="item text-center text-md-start"><i class="fa-solid fa-envelope"></i><span
+                    class="d-none d-md-inline">Messages</span></div>
+            <div class="item text-center text-md-start"><img src="FilterImage (1).png" class="img4" alt=""><span
+                    class="d-none d-md-inline">Grok</span></div>
+            <div class="item text-center text-md-start"><i class="fa-regular fa-bookmark"></i><span
+                    class="d-none d-md-inline">Bookmark</span></div>
+            <div class="item text-center text-md-start"><i class="fa-solid fa-briefcase"></i><span
+                    class="d-none d-md-inline">Jobs</span></div>
+            <a href="./twittercommunity.html"><div class="item text-center text-md-start"><i class="fa-solid fa-user-group"></i><span
+                    class="d-none d-md-inline">Communities</span></div></a>
+            <div class="item text-center text-md-start"><img src="FilterImage (2).png" alt=""><span
+                    class="d-none d-md-inline">Premium</span></div>
+            <div class="item text-center text-md-start"><i class="fa-solid fa-bolt"></i><span
+                    class="d-none d-md-inline">Verified Orgs</span></div>
+            <a href="./twitterprofile.html"><div class="item text-center text-md-start"><i class="fa-regular fa-user"></i><span
+                    class="d-none d-md-inline">Profile</span></div></a>
+            <div class="item text-center text-md-start"><img src="FilterImage (3).png" class="img3" alt=""><span
+                    class="d-none d-md-inline">More</span></div>
+                <button class="d-none d-md-none d-lg-block" type="button">Post</button>
+                <button class="button-class rounded-circle d-block d-md-block d-lg-none" type="button"><img
+                        src="svgviewer-png-output.png" alt=""></button>
+                <div class="item2 d-none d-md-flex px-3">
+                    <img src="google2.jpeg" class="img6 me-3" alt="">
+                    <div class="text">
+                        <span>Temi_olu_wa</span>
+                        <span class="span">@TemiloluwaAwos1</span>
+                    </div>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col-sm-10 col-md-9 main-content">
+          <div class="row">
+            <div class="bottom-icon d-flex d-md-none text-light">
+                <a href="./index.html"><i class="fa-solid fa-house"></i></a>
+                <a href="./twitterexplore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href=""><img src="FilterImage (1).png" class="img4" alt=""></a>
+                <a href="./twitternotification.html"><i class="fa-regular fa-bell"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href="./twittercommunity.html"><i class="fa-solid fa-user-group"></i></a>
+            </div>
+            <div class="col-lg-7 p-0 center-tweet">
+                <div class="topnav w-100 bg-black pt-2">
+                    <div class="d-flex align-items-center justify-content-between px-4 ">   
+                        <div class="input-container h-100 me-4">
+                        <input type="text" id="username" placeholder="Search">
+                        </div>
+                        <i class="fa-solid fa-gear text-light"></i>
+                    </div>
+                    <nav class="d-flex pt-4 justify-content-between align-items-center">
+                        <div class="for-you fw-semibold text-light align-items-center w-100 p-2">For You</div>
+                        <div class="follow fw-semibold h-100 w-100 p-2">Trending</div>
+                        <div class="follow fw-semibold h-100 w-100 p-2">News</div>
+                        <div class="follow fw-semibold h-100 w-100 p-2">Sports</div>
+                        <div class="follow fw-semibold h-100 p-2 w-100">Entertainment</div>
+                    </nav>
+                </div>
+                <div class="picture">
+                    <img src="Screenshot 2024-08-26 10.47.12 PM.png" alt="">
+                </div>
+                <div class="box2 w-100">
+                        <h4>Trends for you</h4>
+                        <div class="boxing ">
+                            <div class="boxes">
+                                <p class="boxer">Trending in Nigeria</p>
+                                <h6 class="fw-bold">Bichi</h6>
+                                <p class="boxer">91.7k posts</p>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div class="boxing">
+                            <div class="boxes">
+                                <p class="boxer">Trending in Nigeria</p>
+                                <h6 class="fw-bold">9ice</h6>
+                                <p class="boxer">91.7k posts</p>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div class="boxing">
+                            <div class="boxes">
+                                <p class="boxer">Trending in Nigeria</p>
+                                <h6 class="fw-bold">#NYSC</h6>
+                                <p class="boxer">91.7k posts</p>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div class="boxing">
+                            <div class="boxes">
+                                <p class="boxer">Trending in Nigeria</p>
+                                <h6 class="fw-bold">Hilda Baci</h6>
+                                <p class="boxer">91.7k posts</p>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <div class="boxing">
+                            <div class="boxes">
+                                <p class="boxer">Trending in Nigeria</p>
+                                <h6 class="fw-bold">Nons Miraj</h6>
+                                <p class="boxer">91.7k posts</p>
+                            </div>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <a href="">Show more</a>
+                    </div> 
+                    <div class="div-tweets p-3 d-flex">
+                        <div class="profile-picture left-side hover-container">
+                            <img class="image10"
+                                src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1724975078~exp=1724978678~hmac=18ccb13be94e00b643f01a4038751df144b4e34f9211be148680eb32934fa536&w=1060"
+                                alt="" width="20">
+                            <div class="dropdown bg-black shadow-sm">
+                                <div class="dropdown-content">
+                                    <div class="sub-dropdown1 d-flex">
+                                        <img src="lQyqvNbm_bigger.jpg" alt="profile-pics" class="profile">
+                                        <div class="sub-dropdown">
+                                            <h3>Dami</h3>
+                                            <p>@Damilolarh_Sh</p>
+                                        </div>
+                                    </div>
+                                    <p class="description">Enjoy every bit of unique deliciousness, and Show Some Love all year long <span>🥰</span> Download our song <span>🎧</span></p>
+                                    <div class="stats">
+                                        <p><strong>3</strong> Following</p>
+                                        <p><strong>75.2K</strong> Followers</p>
+                                    </div>
+                                    <button class="follow-btn">Follow</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side w-100 ps-3">
+                            <div class="upper">
+                                <div class="wrap-div d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span class="text-light fw-semibold">Dami</span>
+                                        <span class="span2">@Damilolarh_Sh · Aug 27</span>
+                                    </div>
+                                    <div class="">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="span-4 text-light">would enjoy reading every bit of
+                                this. His girlfriend is one of a kind 🤍</span>
+                            <div class="image-div pt-4">
+                                <img src="https://img.freepik.com/free-photo/view-funny-monk
+                      ey-human-clothing_23-2150758532.jpg?
+                      t=st=1725044311~exp=1725047911~hmac=e21719a527f89d6a84ba566bd94507d1663fd
+                      c8414693ff2a11ec99fa579d32&w=1800" alt="">
+                            </div>
+                            <div class="footer-div d-flex">
+                                <div class="word-icon"><i class="fa-regular fa-comment"></i>198
+                                </div>
+                                <div class="word-icon2"><i class="fa-solid fa-retweet"></i>245
+                                </div>
+                                <div class="word-icon3"><i class="fa-regular fa-heart"></i>600k
+                                </div>
+                                <div class="word-icon4"><i
+                                        class="fa-solid fa-square-poll-vertical"></i>1.2k</div>
+                                <div class="word-icon5">
+                                    <i class="fa-regular fa-bookmark"></i>
+                                    <i class="fa-solid fa-download"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-tweets p-3 d-flex">
+                        <div class="profile-picture left-side hover-container">
+                            <img class="image10"
+                                src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1724975078~exp=1724978678~hmac=18ccb13be94e00b643f01a4038751df144b4e34f9211be148680eb32934fa536&w=1060"
+                                alt="" width="20">
+                            <div class="dropdown bg-black shadow-sm">
+                                <div class="dropdown-content">
+                                    <div class="sub-dropdown1 d-flex">
+                                        <img src="lQyqvNbm_bigger.jpg" alt="profile-pics" class="profile">
+                                        <div class="sub-dropdown">
+                                            <h3>Dami</h3>
+                                            <p>@Damilolarh_Sh</p>
+                                        </div>
+                                    </div>
+                                    <p class="description">Enjoy every bit of unique deliciousness, and Show Some Love all year long <span>🥰</span> Download our song <span>🎧</span></p>
+                                    <div class="stats">
+                                        <p><strong>3</strong> Following</p>
+                                        <p><strong>75.2K</strong> Followers</p>
+                                    </div>
+                                    <button class="follow-btn">Follow</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side w-100 ps-3">
+                            <div class="upper">
+                                <div class="wrap-div d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span class="text-light fw-semibold">Dami</span>
+                                        <span class="span2">@Damilolarh_Sh · Aug 27</span>
+                                    </div>
+                                    <div class="">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="span-4 text-light">would enjoy reading every bit of
+                                this. His girlfriend is one of a kind 🤍</span>
+                            <div class="image-div pt-4">
+                                <video controls class="w-100" src="https://cdn.coverr.co/videos/coverr-a-young-man-rents-a-bicycle-with-an-app-4615/720p.mp4"></video>
+                            </div>
+                            <div class="footer-div d-flex">
+                                <div class="word-icon"><i class="fa-regular fa-comment"></i>198
+                                </div>
+                                <div class="word-icon2"><i class="fa-solid fa-retweet"></i>245
+                                </div>
+                                <div class="word-icon3"><i class="fa-regular fa-heart"></i>600k
+                                </div>
+                                <div class="word-icon4"><i
+                                        class="fa-solid fa-square-poll-vertical"></i>1.2k</div>
+                                <div class="word-icon5">
+                                    <i class="fa-regular fa-bookmark"></i>
+                                    <i class="fa-solid fa-download"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-5 trends bg-black">
+               <div class="row right-overflow px-3 d-none d-lg-block">
+                    <div class="box3 w-75">
+                        <h4>Who to follow</h4>
+                        <div class="item3 justify-content-between mb-1">
+                            <div class="sub-item3">
+                                <img src="google2.jpeg" class="img7" alt="">
+                                <div class="text-2">
+                                    <span class=" span2 fw-semibold text-light">Agba John Doe</span>
+                                    <span class="span text-start">@Joe-doe</span>
+                                </div>
+                            </div>
+                            <button class=" btn11 p-1 fw-semibold bg-light text-dark"
+                                type="button">Follow</button>
+                        </div>
+                        <div class="item3 justify-content-between mb-1">
+                            <div class="sub-item3">
+                                <img src="google2.jpeg" class="img7" alt="">
+                                <div class="text-2">
+                                    <span class="span2 fw-semibold text-light">Agba John Doe</span>
+                                    <span class="span text-start">@Joe-doe</span>
+                                </div>
+                            </div>
+                            <button class=" btn11 p-1 fw-semibold bg-light text-dark"
+                                type="button">Follow</button>
+                        </div>
+                        <div class="item3 justify-content-between mb-3">
+                            <div class="sub-item3">
+                                <img src="google2.jpeg" class="img7" alt="">
+                                <div class="text-2">
+                                    <span class=" span2 fw-semibold text-light">Agba John Doe</span>
+                                    <span class="span text-start">@Joe-doe</span>
+                                </div>
+                            </div>
+                            <button class=" btn11 p-1 fw-semibold bg-light text-dark"
+                                type="button">Follow</button>
+                        </div>
+                        <a class="link-a" href="">Show more</a>
+                    </div>
+                </div>
+                <div class="foot d-none d-lg-block">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Download the X app</a></li>
+                        <li><a href="">Help Center</a></li>
+                        <li><a href="">Terms of Service</a></li>
+                        <li><a href="">Privacy Police</a></li>
+                        <li><a href="">Cookie Policy</a></li><br>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Ads info</a></li>
+                        <li><a href="">More...</a></li>
+                        <li><a href="">@2024XCorp.</a></li>
+                    </ul>  
+                </div> 
+            </div>
+        </div>
+      </div>
+</body>
+</html>
